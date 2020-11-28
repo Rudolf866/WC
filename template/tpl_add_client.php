@@ -1,4 +1,7 @@
 <?php
+$ID = get_insert_id();
+$InID = intval($ID['id']);
+$InID++;
 $company = get_company_coords();
 $array = explode(',', $company['coords']);
 ?>
@@ -107,6 +110,8 @@ $array = explode(',', $company['coords']);
             <div class="content_add">
                     <div class="left">
                         <label style="width: 180px;"><input class="classic" name="type" type="radio" value="0"> Физическое лицо</label> <label style="width: 180px;"><input class="classic" name="type" type="radio" value="1" style="margin-left: 20px;"> Юридическое лицо </label> <br>
+                        <label id="" for="" style="width: 100px">Клиент id:</label>
+                        <input name="" type="text" placeholder="<?php echo $InID;?>" style="width: 245px;margin-right: 5px;" READONLY><br>
                         <label id="label_name" for="name" style="width: 100px">Имя</label>
                         <input name="name" type="text" placeholder="Имя" style="width: 245px;margin-right: 5px;">
 <!--                        <label for="num_c" style="width: 100px">Номер клиента</label><input name="num_c" type="text" placeholder="№ клиента" style="width: 245px;">-->

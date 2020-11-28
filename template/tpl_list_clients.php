@@ -54,7 +54,7 @@
                         data[0] = $('#client_num').val();
                         data[1] = $('#client_name').val();
                         //data[2] = $('#client_phone').val();
-			data[2] = $('#client_phone').val().replace(/[^\d]/g, '');
+			            data[2] = $('#client_phone').val().replace(/[^\d]/g, '');
                         data = JSON.stringify(data);
                         //console.log(data);
                         $.ajax({

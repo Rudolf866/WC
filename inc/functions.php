@@ -886,3 +886,24 @@ function get_company()
         return $r['region'];
     }
 }
+
+function get_insert_id()
+{
+    $dbh = connect_db();
+
+    $res = $dbh->query("SELECT * FROM `iwater_users` WHERE `session` = '" . $_SESSION['fggafdfc'] . "'");
+    $usersess = $res->fetch();
+    $company = $usersess['company_id'];
+
+    try {
+        $res = $dbh->query("SELECT `id` FROM `iwater_clients` ORDER BY id DESC LIMIT 1 ");
+        $usersess = $res->fetch();
+    } catch (Exception $e) {
+        echo 'Подключение не удалось: ' . $e->getMessage();
+    }
+   // $insertId = $dbh->lastInsertId();
+   // $r = $usersess['id'];
+
+    return $usersess;
+
+}
